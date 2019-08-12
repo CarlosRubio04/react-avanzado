@@ -17,16 +17,16 @@ query getFavs {
 `
 
 const renderProps = ({ loading, error, data }) => {
-    if (loading) return <p>loading ....</p>
-    if (error) return <p>error ....</p>
+  if (loading) return <p>loading ....</p>
+  if (error) return <p>error ....</p>
 
-    const { favs } = data 
+  const { favs } = data
 
-    return <ListOfFavs favs={favs} />
+  return <ListOfFavs favs={favs} />
 }
 
 export const FavsWithQuery = () => (
-    <Query query={GET_FAVS} fetchPolicy='network-only'>
-        {renderProps}
-    </Query>
+  <Query query={GET_FAVS} fetchPolicy='network-only'>
+    {renderProps}
+  </Query>
 )
